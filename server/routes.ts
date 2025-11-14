@@ -5,7 +5,7 @@ import OpenAI from "openai";
 
 // Support both OpenAI and OpenRouter API keys
 // OpenRouter provides access to multiple AI models including OpenAI
-const apiKey =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 "";
+const apiKey ="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";
 const isOpenRouter = apiKey.startsWith("sk-or-");
 
 const openai = new OpenAI({
