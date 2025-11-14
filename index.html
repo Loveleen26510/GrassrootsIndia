@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Grassroots India - Empowering Communities, Transforming Lives. A Section 8 not-for-profit dedicated to charitable activities, education, and holistic community development.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Grassroots India - Empowering Communities, Transforming Lives">
+    <meta property="og:description" content="Join Grassroots India in our mission to bring relief, education, and hope to the vulnerable across the nation.">
+    <meta property="og:type" content="website">
+    
+    <title>Grassroots India - Empowering Communities, Transforming Lives</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts: Montserrat for headings, Lato for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========================================
+           CUSTOM CSS STYLES
+           ======================================== */
+        
+        /* === ROOT VARIABLES === */
+        :root {
+            --primary-blue: #003366;
+            --accent-orange: #F39C12;
+            --text-dark: #343a40;
+            --bg-offwhite: #F8F9FA;
+            --bg-white: #FFFFFF;
+            --transition-smooth: all 0.3s ease;
+        }
+        
+        /* === GLOBAL STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+        
+        /* === NAVIGATION BAR === */
+        .navbar {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            transition: var(--transition-smooth);
+        }
+        
+        .navbar.scrolled {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-blue) !important;
+        }
+        
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 400;
+            margin: 0 0.5rem;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-blue) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--accent-orange);
+            transition: var(--transition-smooth);
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 80%;
+        }
+        
+        .btn-donate-nav {
+            background-color: var(--accent-orange);
+            color: var(--bg-white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            border: 2px solid var(--accent-orange);
+            transition: var(--transition-smooth);
+        }
+        
+        .btn-donate-nav:hover {
+            background-color: transparent;
+            color: var(--accent-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(243, 156, 18, 0.3);
+        }
+        
+        /* === HERO SECTION === */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&h=900&fit=crop') center/cover no-repeat;
+            color: var(--bg-white);
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--bg-white);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+        
+        .btn-primary-hero {
+            background-color: var(--accent-orange);
+            color: var(--bg-white);
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            border: 2px solid var(--accent-orange);
+            margin: 0 0.5rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .btn-primary-hero:hover {
+            background-color: #e67e22;
+            border-color: #e67e22;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+        }
+        
+        .btn-outline-hero {
+            background-color: transparent;
+            color: var(--bg-white);
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            border: 2px solid var(--bg-white);
+            margin: 0 0.5rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .btn-outline-hero:hover {
+            background-color: var(--bg-white);
+            color: var(--primary-blue);
+            transform: scale(1.05);
+        }
+        
+        /* === SECTION GENERAL STYLES === */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--primary-blue);
+        }
+        
+        .bg-offwhite {
+            background-color: var(--bg-offwhite);
+        }
+        
+        /* === ABOUT US SECTION === */
+        .feature-box {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-box i {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-box h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-box p {
+            font-size: 1rem;
+            color: #6c757d;
+            font-weight: 300;
+        }
+        
+        /* === OUR WORK CARDS === */
+        .work-card {
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: var(--transition-smooth);
+            height: 100%;
+            border: 1px solid #e9ecef;
+        }
+        
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .work-card i {
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+        
+        .work-card h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .work-card p {
+            font-size: 0.95rem;
+            color: #6c757d;
+            font-weight: 300;
+        }
+        
+        /* === IMPACT STATISTICS SECTION === */
+        .stats-section {
+            background-color: var(--primary-blue);
+            color: var(--bg-white);
+            padding: 5rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--accent-orange);
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 300;
+            margin-top: 0.5rem;
+        }
+        
+        /* === GET INVOLVED SECTION === */
+        .involvement-box {
+            background-color: var(--bg-offwhite);
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: var(--transition-smooth);
+            height: 100%;
+        }
+        
+        .involvement-box:hover {
+            border-color: var(--accent-orange);
+            box-shadow: 0 4px 12px rgba(243, 156, 18, 0.2);
+        }
+        
+        .involvement-box i {
+            font-size: 3rem;
+            color: var(--accent-orange);
+            margin-bottom: 1.5rem;
+        }
+        
+        .involvement-box h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+        
+        .involvement-box p {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-involvement {
+            background-color: transparent;
+            color: var(--accent-orange);
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 25px;
+            border: 2px solid var(--accent-orange);
+            transition: var(--transition-smooth);
+        }
+        
+        .btn-involvement:hover {
+            background-color: var(--accent-orange);
+            color: var(--bg-white);
+            transform: translateY(-2px);
+        }
+        
+        /* === FOOTER === */
+        .footer {
+            background-color: var(--text-dark);
+            color: #adb5bd;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer h5 {
+            color: var(--bg-white);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin-bottom: 1rem;
+        }
+        
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer ul li a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        
+        .footer ul li a:hover {
+            color: var(--accent-orange);
+            padding-left: 5px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #495057;
+            color: var(--bg-white);
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--accent-orange);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #495057;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            text-align: center;
+        }
+        
+        /* === RESPONSIVE STYLES === */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .btn-primary-hero, .btn-outline-hero {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+                margin: 0.5rem 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* === SMOOTH SCROLL === */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ========================================
+         NAVIGATION BAR
+         ======================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Grassroots India</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#work">Our Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#involved">Get Involved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-donate-nav" onclick="scrollToSection('involved')">Donate Now</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Empowering Communities, Transforming Lives</h1>
+                <p>Join Grassroots India in our mission to bring relief, education, and hope to the vulnerable across the nation.</p>
+                <div class="mt-4">
+                    <button class="btn btn-primary-hero" onclick="scrollToSection('involved')">Donate Now</button>
+                    <button class="btn btn-outline-hero" onclick="scrollToSection('about')">Learn Our Mission</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         ABOUT US SECTION
+         ======================================== -->
+    <section id="about" class="bg-white">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="row align-items-center">
+                <!-- Left Column: Mission Statement -->
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <p class="lead" style="font-size: 1.1rem; line-height: 1.8;">
+                        <strong>Grassroots India</strong> is a Section 8 not-for-profit Company dedicated to charitable activities and holistic community development. We work tirelessly to uplift the vulnerable by providing emergency relief, quality education, healthcare services, and sustainable livelihood opportunities. Our commitment is to create lasting positive change in the lives of those who need it most, fostering a more equitable and compassionate society.
+                    </p>
+                </div>
+                
+                <!-- Right Column: Feature Boxes -->
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="feature-box">
+                                <i class="fas fa-hands-helping"></i>
+                                <h4>Our Mission</h4>
+                                <p>To undertake charitable activities for the development of the vulnerable.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="feature-box">
+                                <i class="fas fa-book-open"></i>
+                                <h4>Our Vision</h4>
+                                <p>To promote education, arts, and science at all levels.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="feature-box">
+                                <i class="fas fa-heartbeat"></i>
+                                <h4>Our Approach</h4>
+                                <p>To provide emergency relief, basic care, and public health services.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         OUR WORK SECTION
+         ======================================== -->
+    <section id="work" class="bg-offwhite">
+        <div class="container">
+            <h2 class="section-title">Our Core Pillars of Work</h2>
+            <div class="row g-4">
+                <!-- Card 1: Relief & Rehabilitation -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="work-card">
+                        <i class="fas fa-first-aid"></i>
+                        <h4>Relief & Rehabilitation</h4>
+                        <p>Providing immediate emergency relief and long-term rehabilitation support to communities affected by natural disasters and crises.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Education For All -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="work-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Education For All</h4>
+                        <p>Ensuring access to quality education for underprivileged children and promoting lifelong learning opportunities across all age groups.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 3: Health & Nutrition -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="work-card">
+                        <i class="fas fa-seedling"></i>
+                        <h4>Health & Nutrition</h4>
+                        <p>Delivering essential healthcare services and nutritional support to improve the well-being of vulnerable populations.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 4: Women Empowerment -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="work-card">
+                        <i class="fas fa-female"></i>
+                        <h4>Women Empowerment</h4>
+                        <p>Empowering women through skill development, economic opportunities, and advocacy for their rights and dignity.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 5: Livelihood & Commerce -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="work-card">
+                        <i class="fas fa-briefcase"></i>
+                        <h4>Livelihood & Commerce</h4>
+                        <p>Creating sustainable livelihood opportunities and supporting small-scale commerce to promote economic independence.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 6: Peace & Harmony -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="work-card">
+                        <i class="fas fa-peace"></i>
+                        <h4>Peace & Harmony</h4>
+                        <p>Fostering interfaith dialogue, cultural understanding, and community harmony to build a more peaceful society.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         IMPACT STATISTICS SECTION
+         ======================================== -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="5000">0</div>
+                        <div class="stat-label">Lives Touched</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="25">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="1200">0</div>
+                        <div class="stat-label">Children Educated</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="10">0</div>
+                        <div class="stat-label">Partner NGOs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         GET INVOLVED SECTION
+         ======================================== -->
+    <section id="involved" class="bg-white">
+        <div class="container">
+            <h2 class="section-title">You Can Make a Difference</h2>
+            <div class="row g-4">
+                <!-- Box 1: Volunteer -->
+                <div class="col-lg-6">
+                    <div class="involvement-box">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Volunteer Your Time</h3>
+                        <p>Join our team of dedicated volunteers and contribute your skills to a noble cause. Together, we can create meaningful change in the lives of those who need it most.</p>
+                        <button class="btn btn-involvement" onclick="alert('Thank you for your interest! Our volunteer coordinator will contact you soon.')">Become a Volunteer</button>
+                    </div>
+                </div>
+                
+                <!-- Box 2: Partner -->
+                <div class="col-lg-6">
+                    <div class="involvement-box">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Partner With Us</h3>
+                        <p>We collaborate with companies and societies with similar objectives. Let's work together to amplify our impact and reach more communities in need.</p>
+                        <button class="btn btn-involvement" onclick="alert('Thank you for your interest! Our partnerships team will reach out to discuss collaboration opportunities.')">Corporate Partnership</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: About -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-logo">Grassroots India</div>
+                    <p style="font-size: 0.9rem;">A Section 8 not-for-profit dedicated to uplifting communities through charitable activities, education, and sustainable development.</p>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#work">Our Work</a></li>
+                        <li><a href="#involved">Get Involved</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Contact Info -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--accent-orange); margin-right: 8px;"></i>
+                            123 Community Street, New Delhi, India
+                        </li>
+                        <li style="margin-bottom: 0.75rem;">
+                            <i class="fas fa-phone" style="color: var(--accent-orange); margin-right: 8px;"></i>
+                            +91 98765 43210
+                        </li>
+                        <li style="margin-bottom: 0.75rem;">
+                            <i class="fas fa-envelope" style="color: var(--accent-orange); margin-right: 8px;"></i>
+                            info@grassrootsindia.org
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Follow Us -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Grassroots India. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ========================================
+         BOOTSTRAP 5 JS & DEPENDENCIES
+         ======================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- ========================================
+         CUSTOM JAVASCRIPT
+         ======================================== -->
+    <script>
+        // ===================================
+        // NAVBAR SCROLL EFFECT
+        // ===================================
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNavbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // ===================================
+        // SMOOTH SCROLL FUNCTION
+        // ===================================
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+            // Close mobile menu if open
+            const navbarCollapse = document.getElementById('navbarNav');
+            if (navbarCollapse.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                bsCollapse.hide();
+            }
+        }
+        
+        // Add smooth scroll to all nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+            });
+        });
+        
+        // ===================================
+        // ANIMATED STATISTICS COUNTER
+        // ===================================
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // ~60fps
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString() + '+';
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString() + '+';
+                }
+            }, 16);
+        }
+        
+        // Intersection Observer for statistics animation
+        const statsSection = document.querySelector('.stats-section');
+        let statsAnimated = false;
+        
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !statsAnimated) {
+                    statsAnimated = true;
+                    const statNumbers = document.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        animateCounter(stat);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        observer.observe(statsSection);
+    </script>
+    
+</body>
+</html>
